@@ -20,6 +20,8 @@ class Messager extends Widget
     public $type;
     public $text;
     public $link;
+    public $time="3000";
+    public $speed="300";
 
     public function init()
     {
@@ -31,7 +33,7 @@ class Messager extends Widget
                 $js = "jQuery.stickr({note:'$this->text',className:'classic error',sticked:true,position:{right:0,bottom:0}});";
                 break;
             case 'SuccessMessage':
-                $js = "jQuery.stickr({note:'$this->text',className:'next',position:{right:0,bottom:0},time:3000,speed:300});";
+                $js = "jQuery.stickr({note:'$this->text',className:'next',position:{right:0,bottom:0},time:$this->time,speed:$this->speed});";
                 break;
             case 'ErrorLink':
                 $js = "
